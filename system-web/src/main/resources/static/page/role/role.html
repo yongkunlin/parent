@@ -1,0 +1,98 @@
+<div class="container" id="roleList">
+    <div class="row mx-auto w-75">
+        <div class="col-6">
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" @click="addModal">新增</button>
+            </div>
+            <button type="button" class="btn btn-outline-warning btn-sm" @click="delRows">删除</button>
+            <div class="head-right">
+                <input type="text" class="form-control input-group-sm input-list" placeholder="输入设备编号进行搜索">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" @click="addModal">搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-auto w-75" style="height: 15px"></div>
+    <div class="row mx-auto w-75">
+        <div class="col-12">
+            <table class="table table-hover table-success">
+                <thead class="thead-default">
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>序号</th>
+                    <th>角色名称</th>
+                    <th>code</th>
+                    <th>层级</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody id="list">
+                <tr v-for="(data,index) in datas">
+                    <td><input type="checkbox" :value="index" v-model="checkedRows" value={{data.id}}></td>
+                    <td>{{index+1}}</td>
+                    <td>{{data.roleName}}</td>
+                    <td>{{data.roleCode}}</td>
+                    <td>{{data.level}}</td>
+                    <td>{{data.status}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addOrEditModal">
+    <div class="modal-dialog">
+
+    </div>
+</div>
+<script>
+    var role = new Vue({
+        el: "#roleList",
+        data: {
+            checkAll: false,
+            checkedRows: [],
+            datas: [],
+            newRow: {},
+            roleAddOrEdit: ""
+        },
+        mounted: function () {
+            $.ajax({
+                url: '/api/role/all',
+                method: 'post',
+                success: function (datas) {
+                    role.$data.datas = datas;
+                }
+            });
+        },
+        updated: function () {
+            $(".main-content").slimScroll({
+                height: '100%',
+                wheelStep: 2
+            });
+        },
+        methods: {
+            addModal: function () {
+                $("#addOrEditModal>.modal-dialog").load("/page/role/roleAddOrEdit.html");
+                $("#addOrEditModal").addClass("addModal").modal();
+            },
+            delRows: function () {
+                if (this.checkedRows.length <= 0) {
+                    alert("您未选择需要删除的数据");
+                    return false;
+                }
+                if (!confirm("您确定要删除选择的数据吗？")) {
+                    return false;
+                }
+                console.log(this.checkedRows)
+                for (var i = 0; i < this.checkedRows.length; i++) {
+                    var checkedRowIndex = this.checkedRows[i];
+                    this.facilities = $.grep(this.facilities, function (facility, j) {
+                        return j != checkedRowIndex;
+                    });
+                }
+                this.checkedRows = [];
+            }
+        }
+    });
+</script>

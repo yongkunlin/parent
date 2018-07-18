@@ -1,0 +1,53 @@
+<div id="roleAddOrEdit" class="modal-content">
+    <form id="roleAddOrEditForm">
+        <div class="modal-header">
+            <h4 class="modal-title">新增角色</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <lable>角色名称：</lable>
+                <input class="form-control" name="roleName" placeholder="角色名称" v-model="role.roleName">
+            </div>
+            <div class="row">
+                <lable>code：</lable>
+                <input class="form-control" name="roleCode" placeholder="code" v-model="role.roleCode">
+            </div>
+            <div class="row">
+                <lable>层级：</lable>
+                <input class="form-control" name="level" placeholder="层级" v-model="role.level">
+            </div>
+            <div class="row">
+                <lable>状态：</lable>
+                <input class="form-control" name="status" placeholder="状态" v-model="role.status">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" @click="saveForm">确认</button>
+            <!--data-dismiss="modal"-->
+        </div>
+    </form>
+</div>
+<script>
+    new Vue({
+        el: "#roleAddOrEdit",
+        data: {
+            role: {roleName: 111}
+        },
+        methods: {
+            saveForm: function () {
+                var data = dom2Json('#roleAddOrEditForm');
+                $.post(basePaht + '/api/role/saveOrUpdate', data, function (data) {
+                    if (data.result_state === SUCCESS) {
+                        $("#addOrEditModal").removeClass("addModal").modal("hide");
+                        return false;
+                    } else {
+                        console.log('保存失败');
+                        console.log(data);
+                        return false;
+                    }
+                })
+            }
+        }
+    })
+</script>

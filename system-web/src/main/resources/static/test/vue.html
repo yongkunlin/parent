@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="vue">
+    <span>{{now}}</span>
+    <input type="text" v-model="nowdeal">
+</div>
+<script src="/base/js/jquery-3.3.1.js"></script>
+<script src="/base/js/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#vue",
+        data: {
+            now: new Date()
+        },
+        computed: {
+            nowdeal: function () {
+                return this.now
+            }
+        },
+        watch: {
+            nowdeal: function (newValue, oldValue) {
+                console.log("oldValue=" + oldValue)
+                console.log("newValue=" + newValue)
+            }
+        }
+    });
+    setInterval(function () {
+        vm.now = new Date();
+    }, 1000);
+</script>
+</body>
+</html>

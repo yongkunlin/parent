@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: school-web
+#  datasource:
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/knowledge
+#    username: root
+#    password: 123456
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true #开启驼峰映射
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+#为了模拟集群 端口采用控制台输入的形式写入
+#server:
+#  port: 9001
+
+system:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/knowledge_system
+    username: root
+    password: 123456
+
+school:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/knowledge_school
+    username: root
+    password: 123456
