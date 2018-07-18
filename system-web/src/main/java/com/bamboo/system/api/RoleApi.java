@@ -1,8 +1,8 @@
 package com.bamboo.system.api;
 
-import com.bamboo.core.base.BaseResoult;
-import com.bamboo.core.base.BaseTableVo;
-import com.bamboo.core.base.PageVo;
+import com.bamboo.core.base.result.BaseResoult;
+import com.bamboo.core.base.encapsulation.BaseTableVo;
+import com.bamboo.core.base.encapsulation.PageVo;
 import com.bamboo.entity.system.Role;
 import com.bamboo.system.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;

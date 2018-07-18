@@ -1,7 +1,7 @@
 package com.bamboo.system.service.impl;
 
 import com.bamboo.entity.system.Org;
-import com.bamboo.system.exception.ServiceException;
+import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.mapper.OrgMapper;
 import com.bamboo.system.service.OrgService;
 import org.springframework.beans.factory.annotation.Autowired;

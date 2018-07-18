@@ -1,6 +1,6 @@
 package com.bamboo.entity.system;
 
-import com.bamboo.core.base.BaseEntity;
+import com.bamboo.core.base.entity.BaseEntity;
 
 /**
  * 部门

@@ -6,7 +6,7 @@ import com.bamboo.entity.system.Org;
 import com.bamboo.entity.system.Session;
 import com.bamboo.entity.system.User;
 import com.bamboo.entity.validata.SessionValidata;
-import com.bamboo.system.exception.ServiceException;
+import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.mapper.SessionMapper;
 import com.bamboo.system.service.OrgService;
 import com.bamboo.system.service.SessionService;

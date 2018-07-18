@@ -1,4 +1,4 @@
-package com.bamboo.core.base;
+package com.bamboo.core.base.controller;
 
 /**
  * 基础controller封装

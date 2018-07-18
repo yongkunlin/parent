@@ -3,7 +3,7 @@ package com.bamboo.system.service.impl;
 import com.bamboo.core.util.UUIDUtil;
 import com.bamboo.entity.system.User;
 import com.bamboo.entity.validata.UserValidata;
-import com.bamboo.system.exception.ServiceException;
+import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.mapper.UserMapper;
 import com.bamboo.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

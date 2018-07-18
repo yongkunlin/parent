@@ -1,7 +1,7 @@
 package com.bamboo.system.api;
 
-import com.bamboo.core.base.BaseApi;
-import com.bamboo.core.base.GlobalConstants;
+import com.bamboo.core.base.api.BaseApi;
+import com.bamboo.core.base.constant.GlobalConstants;
 import com.bamboo.core.util.VerifyCodeUtil;
 import com.bamboo.entity.system.Org;
 import com.bamboo.entity.system.User;

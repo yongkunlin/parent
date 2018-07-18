@@ -1,11 +1,11 @@
 package com.bamboo.system.aop;
 
-import com.bamboo.core.base.BaseEntity;
-import com.bamboo.core.base.GlobalConstants;
+import com.bamboo.core.base.entity.BaseEntity;
+import com.bamboo.core.base.constant.GlobalConstants;
 import com.bamboo.entity.system.Session;
 import com.bamboo.entity.system.User;
 import com.bamboo.simulate.UserAdmin;
-import com.bamboo.system.exception.ServiceException;
+import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.util.ThreadVariable;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

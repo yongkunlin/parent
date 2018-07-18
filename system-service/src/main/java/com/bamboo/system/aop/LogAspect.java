@@ -1,8 +1,8 @@
 package com.bamboo.system.aop;
 
-import com.bamboo.core.base.BaseEntity;
+import com.bamboo.core.base.entity.BaseEntity;
 import com.bamboo.entity.validata.LogValidata;
-import com.bamboo.system.exception.ServiceException;
+import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.service.LogService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;

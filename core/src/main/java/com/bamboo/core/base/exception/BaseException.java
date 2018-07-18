@@ -1,4 +1,4 @@
-package com.bamboo.core.base;
+package com.bamboo.core.base.exception;
 
 /**
  * 基础异常封装

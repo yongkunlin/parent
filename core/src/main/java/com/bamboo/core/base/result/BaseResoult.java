@@ -1,15 +1,15 @@
-package com.bamboo.core.base;
+package com.bamboo.core.base.result;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.bamboo.core.base.GlobalConstants.FAILURE;
-import static com.bamboo.core.base.GlobalConstants.MSG_ERR;
-import static com.bamboo.core.base.GlobalConstants.MSG_SUCCESS_ADD;
-import static com.bamboo.core.base.GlobalConstants.MSG_SUCCESS_EDIT;
-import static com.bamboo.core.base.GlobalConstants.RESULT_MSG;
-import static com.bamboo.core.base.GlobalConstants.RESULT_STATE;
-import static com.bamboo.core.base.GlobalConstants.SUCCESS;
+import static com.bamboo.core.base.constant.GlobalConstants.FAILURE;
+import static com.bamboo.core.base.constant.GlobalConstants.MSG_ERR;
+import static com.bamboo.core.base.constant.GlobalConstants.MSG_SUCCESS_ADD;
+import static com.bamboo.core.base.constant.GlobalConstants.MSG_SUCCESS_EDIT;
+import static com.bamboo.core.base.constant.GlobalConstants.RESULT_MSG;
+import static com.bamboo.core.base.constant.GlobalConstants.RESULT_STATE;
+import static com.bamboo.core.base.constant.GlobalConstants.SUCCESS;
 
 /**
  * 返回值map基础封装

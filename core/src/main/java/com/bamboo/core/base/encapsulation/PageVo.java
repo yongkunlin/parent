@@ -1,4 +1,4 @@
-package com.bamboo.core.base;
+package com.bamboo.core.base.encapsulation;
 
 /**
  * 分页基础封装类

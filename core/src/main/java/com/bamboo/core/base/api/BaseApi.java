@@ -1,4 +1,4 @@
-package com.bamboo.core.base;
+package com.bamboo.core.base.api;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

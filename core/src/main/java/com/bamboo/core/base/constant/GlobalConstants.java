@@ -1,4 +1,4 @@
-package com.bamboo.core.base;
+package com.bamboo.core.base.constant;
 
 /**
  * 全局常量

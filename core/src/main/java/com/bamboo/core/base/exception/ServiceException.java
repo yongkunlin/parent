@@ -1,6 +1,5 @@
-package com.bamboo.system.exception;
+package com.bamboo.core.base.exception;
 
-import com.bamboo.core.base.BaseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

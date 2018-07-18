@@ -1,7 +1,7 @@
 package com.bamboo.system.api;
 
-import com.bamboo.core.base.BaseTableVo;
-import com.bamboo.core.base.PageVo;
+import com.bamboo.core.base.encapsulation.BaseTableVo;
+import com.bamboo.core.base.encapsulation.PageVo;
 import com.bamboo.entity.system.Resource;
 import com.bamboo.system.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;

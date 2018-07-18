@@ -1,7 +1,7 @@
 package com.bamboo.system.service;
 
-import com.bamboo.core.base.BaseTableVo;
-import com.bamboo.core.base.PageVo;
+import com.bamboo.core.base.encapsulation.BaseTableVo;
+import com.bamboo.core.base.encapsulation.PageVo;
 import com.bamboo.entity.system.Role;
 
 import java.util.List;

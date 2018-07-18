@@ -1,4 +1,4 @@
-package com.bamboo.core.base;
+package com.bamboo.core.base.encapsulation;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.bamboo.core.base;
+package com.bamboo.core.base.entity;
 
 import java.io.Serializable;
 import java.util.Date;

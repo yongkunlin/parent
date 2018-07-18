@@ -1,6 +1,6 @@
 package com.bamboo.entity.school;
 
-import com.bamboo.core.base.BaseEntity;
+import com.bamboo.core.base.entity.BaseEntity;
 
 /**
  * 学生

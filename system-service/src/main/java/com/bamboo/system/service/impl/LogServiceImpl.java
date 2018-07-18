@@ -5,7 +5,7 @@ import com.bamboo.entity.system.Log;
 import com.bamboo.entity.system.Session;
 import com.bamboo.entity.validata.LogValidata;
 import com.bamboo.simulate.UserAdmin;
-import com.bamboo.system.exception.ServiceException;
+import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.mapper.LogMapper;
 import com.bamboo.system.service.LogService;
 import com.bamboo.system.util.ThreadVariable;

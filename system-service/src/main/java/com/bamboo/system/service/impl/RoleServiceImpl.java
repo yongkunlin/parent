@@ -1,10 +1,10 @@
 package com.bamboo.system.service.impl;
 
-import com.bamboo.core.base.BaseTableVo;
-import com.bamboo.core.base.PageVo;
+import com.bamboo.core.base.encapsulation.BaseTableVo;
+import com.bamboo.core.base.encapsulation.PageVo;
 import com.bamboo.core.util.UUIDUtil;
 import com.bamboo.entity.system.Role;
-import com.bamboo.system.exception.ServiceException;
+import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.mapper.RoleMapper;
 import com.bamboo.system.service.RoleService;
 import com.github.pagehelper.PageHelper;
