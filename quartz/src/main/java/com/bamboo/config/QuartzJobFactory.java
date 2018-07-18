@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * Created by yklin on 2018/7/9.
  */
 @Component
-public class JobFactory extends AdaptableJobFactory {
+public class QuartzJobFactory extends AdaptableJobFactory {
 
     @Autowired
     private AutowireCapableBeanFactory capableBeanFactory;

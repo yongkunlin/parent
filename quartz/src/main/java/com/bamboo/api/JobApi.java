@@ -1,6 +1,6 @@
 package com.bamboo.api;
 
-import com.bamboo.service.JobService;
+import com.bamboo.service.JobTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +13,7 @@ public class JobApi {
 
     @Autowired
     @SuppressWarnings("all")
-    private JobService jobService;
+    private JobTaskService jobTaskService;
 
 
 }
