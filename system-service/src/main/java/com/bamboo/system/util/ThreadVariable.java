@@ -1,7 +1,7 @@
 package com.bamboo.system.util;
 
 import com.bamboo.entity.system.Session;
-import com.bamboo.entity.validata.LoginValidata;
+import com.bamboo.entity.validator.LoginValidator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,14 +23,14 @@ public class ThreadVariable {
         if (map == null) {
             map = new HashMap<String, Object>();
         }
-        map.put(LoginValidata.LOGIN_SESSION, session);
+        map.put(LoginValidator.LOGIN_SESSION, session);
         threadLocal.set(map);
     }
 
     public static Session getSession() {
         Map map = (Map) threadLocal.get();
         if (map != null) {
-            return (Session) map.get(LoginValidata.LOGIN_SESSION);
+            return (Session) map.get(LoginValidator.LOGIN_SESSION);
         }
         return null;
     }

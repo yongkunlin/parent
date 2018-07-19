@@ -2,7 +2,7 @@ package com.bamboo.system.service.impl;
 
 import com.bamboo.core.util.UUIDUtil;
 import com.bamboo.entity.system.User;
-import com.bamboo.entity.validata.UserValidata;
+import com.bamboo.entity.validator.UserValidator;
 import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.mapper.UserMapper;
 import com.bamboo.system.service.UserService;
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserByUserCodeAndPassword(String userCode, String password) {
-        if (!UserValidata.validataUserCodeAndPassword(userCode, password)) {
+        if (!UserValidator.validataUserCodeAndPassword(userCode, password)) {
             throw new ServiceException("参数错误", this.getClass().getName());
         }
         return userMapper.findUserByUserCodeAndPassword(userCode, password);
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void register(User user) {
-        if (!UserValidata.validata(user)) {
+        if (!UserValidator.validata(user)) {
             throw new ServiceException("参数错误", this.getClass().getName());
         }
         User findUser = findUserByUserCode(user.getUserCode());
@@ -69,7 +69,7 @@ public class UserServiceImpl implements UserService {
      * @param user
      */
     private void saveUser(User user) {
-        if (!UserValidata.validata(user)) {
+        if (!UserValidator.validata(user)) {
             throw new ServiceException("参数错误", this.getClass().getName());
         }
         try {

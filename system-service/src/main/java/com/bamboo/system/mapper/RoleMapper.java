@@ -1,7 +1,7 @@
 package com.bamboo.system.mapper;
 
 import com.bamboo.entity.system.Role;
-import com.bamboo.entity.validata.RoleValidata;
+import com.bamboo.entity.validator.RoleValidator;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -19,7 +19,7 @@ import java.util.List;
  * Created by yklin on 2018/6/15.
  */
 @Mapper
-@CacheConfig(cacheNames = RoleValidata.ENTITY_NAME)
+@CacheConfig(cacheNames = RoleValidator.ENTITY_NAME)
 public interface RoleMapper {
 
     @Select("SELECT * FROM role WHERE id = #{id}")

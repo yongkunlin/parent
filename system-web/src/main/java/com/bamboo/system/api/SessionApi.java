@@ -5,8 +5,8 @@ import com.bamboo.core.base.constant.GlobalConstants;
 import com.bamboo.core.util.VerifyCodeUtil;
 import com.bamboo.entity.system.Session;
 import com.bamboo.entity.system.User;
-import com.bamboo.entity.validata.SessionValidata;
-import com.bamboo.entity.validata.UserValidata;
+import com.bamboo.entity.validator.SessionValidator;
+import com.bamboo.entity.validator.UserValidator;
 import com.bamboo.system.service.SessionService;
 import com.bamboo.system.service.UserService;
 import org.slf4j.Logger;
@@ -47,13 +47,13 @@ public class SessionApi extends BaseApi {
     @RequestMapping("login")
     public Map<String, Object> login(HttpServletRequest request, String userCode, String password, String validataCode) {
         Map<String, Object> result = new HashMap<>();
-        if (!UserValidata.validataUserCodeAndPassword(userCode, password)) {
+        if (!UserValidator.validataUserCodeAndPassword(userCode, password)) {
             result.put("loginType", GlobalConstants.FAILURE);
             result.put("msg", "参数错误");
             return result;
         }
         HttpSession httpSession = request.getSession();
-        String sessionCode = (String) httpSession.getAttribute(SessionValidata.LOGIN_CODE);
+        String sessionCode = (String) httpSession.getAttribute(SessionValidator.LOGIN_CODE);
         if (StringUtils.isEmpty(sessionCode) || !validataCode.equals(sessionCode)) {
             result.put("loginType", GlobalConstants.FAILURE);
             result.put("msg", "验证码错误");
@@ -66,7 +66,7 @@ public class SessionApi extends BaseApi {
             return result;
         }
         Session session = sessionService.addSession(request, user);
-        httpSession.setAttribute(SessionValidata.HTTP_SESSION, session);
+        httpSession.setAttribute(SessionValidator.HTTP_SESSION, session);
         result.put("loginType", GlobalConstants.SUCCESS);
         result.put("msg", "登录成功");
         return result;
@@ -82,7 +82,7 @@ public class SessionApi extends BaseApi {
     public String validataCode(HttpServletRequest request) {
         HttpSession session = request.getSession();
         String vCode = VerifyCodeUtil.getSimpleCode();
-        session.setAttribute(SessionValidata.LOGIN_CODE, vCode);
+        session.setAttribute(SessionValidator.LOGIN_CODE, vCode);
         return vCode;
     }
 

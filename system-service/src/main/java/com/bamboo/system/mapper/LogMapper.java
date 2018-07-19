@@ -1,7 +1,7 @@
 package com.bamboo.system.mapper;
 
 import com.bamboo.entity.system.Log;
-import com.bamboo.entity.validata.LogValidata;
+import com.bamboo.entity.validator.LogValidator;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -13,7 +13,7 @@ import org.springframework.cache.annotation.CacheEvict;
  * Created by yklin on 2018/5/28.
  */
 @Mapper
-@CacheConfig(cacheNames = LogValidata.ENTITY_NAME)
+@CacheConfig(cacheNames = LogValidator.ENTITY_NAME)
 public interface LogMapper {
 
     @Insert("INSERT INTO log Values(#{log.id},#{log.level},#{log.type},#{log.operatorObj},#{log.operatorDescribe}" +

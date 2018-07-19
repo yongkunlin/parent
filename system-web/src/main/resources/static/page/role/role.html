@@ -61,7 +61,11 @@
                 url: '/api/role/all',
                 method: 'post',
                 success: function (datas) {
+                    console.log(datas);
                     role.$data.datas = datas;
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest.responseJSON);
                 }
             });
         },

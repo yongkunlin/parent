@@ -5,7 +5,7 @@ import com.bamboo.core.util.UUIDUtil;
 import com.bamboo.entity.system.Org;
 import com.bamboo.entity.system.Session;
 import com.bamboo.entity.system.User;
-import com.bamboo.entity.validata.SessionValidata;
+import com.bamboo.entity.validator.SessionValidator;
 import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.mapper.SessionMapper;
 import com.bamboo.system.service.OrgService;
@@ -38,7 +38,7 @@ public class SessionServiceImpl implements SessionService {
         String accessIp = IpAddressUtil.getIpAddr(request);
         StringBuffer requestURL = request.getRequestURL();
         Org org = orgService.expand(user.getOrg().getId());
-        Session session = new Session(UUIDUtil.get32UpperCase(), user, org, accessIp, new Date(), requestURL.toString(), SessionValidata.LOGIN_IN);
+        Session session = new Session(UUIDUtil.get32UpperCase(), user, org, accessIp, new Date(), requestURL.toString(), SessionValidator.LOGIN_IN);
         saveSession(session);
         return session;
     }

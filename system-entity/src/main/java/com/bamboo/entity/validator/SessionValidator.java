@@ -1,10 +1,10 @@
-package com.bamboo.entity.validata;
+package com.bamboo.entity.validator;
 
 /**
  * 会话常量
  * Created by yklin on 2018/5/21.
  */
-public class SessionValidata {
+public class SessionValidator {
     //实体名
     public static final String ENTITY_NAME = "session";
 

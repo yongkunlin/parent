@@ -1,4 +1,4 @@
-package com.bamboo.entity.validata;
+package com.bamboo.entity.validator;
 
 
 import com.bamboo.entity.system.User;
@@ -8,7 +8,7 @@ import org.springframework.util.StringUtils;
  * 用户常量以及校验
  * Created by yklin on 2018/5/15.
  */
-public class UserValidata {
+public class UserValidator {
     //实体名
     public static final String ENTITY_NAME = "user";
     //注册验证码key

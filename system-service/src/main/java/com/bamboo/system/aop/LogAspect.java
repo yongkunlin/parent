@@ -1,7 +1,7 @@
 package com.bamboo.system.aop;
 
 import com.bamboo.core.base.entity.BaseEntity;
-import com.bamboo.entity.validata.LogValidata;
+import com.bamboo.entity.validator.LogValidator;
 import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.service.LogService;
 import org.aspectj.lang.JoinPoint;
@@ -42,7 +42,7 @@ public class LogAspect {
         } catch (Throwable throwable) {
             throw new ServiceException("日志获取返回值失败", this.getClass().getName());
         }
-        logService.log(LogValidata.LEVEL_WARN, LogValidata.TYPE_ADD, args[0].toString(), "新增数据", args[0].getClass().getName());
+        logService.log(LogValidator.LEVEL_WARN, LogValidator.TYPE_ADD, args[0].toString(), "新增数据", args[0].getClass().getName());
     }
 
     /**
@@ -60,6 +60,6 @@ public class LogAspect {
         for (Object arg : args) {
             operatorObj.append(arg.toString());
         }
-        logService.log(LogValidata.LEVEL_NORMAL, LogValidata.TYPE_QUERY, operatorObj.toString(), "查询数据", null);
+        logService.log(LogValidator.LEVEL_NORMAL, LogValidator.TYPE_QUERY, operatorObj.toString(), "查询数据", null);
     }
 }

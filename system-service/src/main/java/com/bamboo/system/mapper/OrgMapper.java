@@ -1,7 +1,7 @@
 package com.bamboo.system.mapper;
 
 import com.bamboo.entity.system.Org;
-import com.bamboo.entity.validata.OrgValidata;
+import com.bamboo.entity.validator.OrgValidator;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -14,7 +14,7 @@ import java.util.List;
  * Created by yklin on 2018/5/21.
  */
 @Mapper
-@CacheConfig(cacheNames = OrgValidata.ENTITY_NAME)
+@CacheConfig(cacheNames = OrgValidator.ENTITY_NAME)
 public interface OrgMapper {
 
     @Select("SELECT * FROM org WHERE id = #{id}")

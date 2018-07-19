@@ -1,4 +1,4 @@
-package com.bamboo.entity.validata;
+package com.bamboo.entity.validator;
 
 import com.bamboo.entity.system.Log;
 import org.springframework.util.StringUtils;
@@ -7,7 +7,7 @@ import org.springframework.util.StringUtils;
  * 日志常量以及校验
  * Created by yklin on 2018/5/28.
  */
-public class LogValidata {
+public class LogValidator {
 
     public static final String ENTITY_NAME = "log";
     /**

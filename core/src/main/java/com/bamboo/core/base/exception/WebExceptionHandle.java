@@ -28,11 +28,9 @@ public class WebExceptionHandle {
      */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public Map<String, Object> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
+    public CatchException handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         logger.error("参数解析失败", e);
-        Map<String, Object> responseMap = new HashMap<>();
-        responseMap.put("result", "400 - Bad Request");
-        return responseMap;
+        return new CatchException("Bad Request", 400, e);
     }
 
     /**
@@ -40,11 +38,9 @@ public class WebExceptionHandle {
      */
     @ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-    public Map<String, Object> handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {
+    public CatchException handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {
         logger.error("不支持当前请求方法", e);
-        Map<String, Object> responseMap = new HashMap<>();
-        responseMap.put("result", "405 - Method Not Allowed");
-        return responseMap;
+        return new CatchException("Method Not Allowed", 405, e);
     }
 
     /**
@@ -52,11 +48,9 @@ public class WebExceptionHandle {
      */
     @ResponseStatus(HttpStatus.UNSUPPORTED_MEDIA_TYPE)
     @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
-    public Map<String, Object> handleHttpMediaTypeNotSupportedException(Exception e) {
+    public CatchException handleHttpMediaTypeNotSupportedException(Exception e) {
         logger.error("不支持当前媒体类型", e);
-        Map<String, Object> responseMap = new HashMap<>();
-        responseMap.put("result", "Unsupported Media Type");
-        return responseMap;
+        return new CatchException("Unsupported Media Type", 415, e);
     }
 
     /**
@@ -64,13 +58,12 @@ public class WebExceptionHandle {
      */
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
-    public Map<String, Object> handleException(Exception e) {
+    public CatchException handleException(Exception e) {
         Map<String, Object> responseMap = new HashMap<>();
         if (e instanceof ServiceException) {
-            responseMap.put("result", "500 - Internal Server Error");
+            return new CatchException("Internal Server Error", 500, e);
         }
         logger.error("服务运行异常", e);
-        e.printStackTrace();
-        return responseMap;
+        return new CatchException("Internal Server Error", 500, e);
     }
 }

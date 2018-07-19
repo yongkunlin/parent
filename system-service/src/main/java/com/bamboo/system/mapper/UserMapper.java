@@ -1,7 +1,7 @@
 package com.bamboo.system.mapper;
 
 import com.bamboo.entity.system.User;
-import com.bamboo.entity.validata.UserValidata;
+import com.bamboo.entity.validator.UserValidator;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -20,7 +20,7 @@ import java.util.List;
  */
 @Mapper
 //配置了该数据访问对象中返回的内容将存储于名为users的缓存对象中
-@CacheConfig(cacheNames = UserValidata.ENTITY_NAME)
+@CacheConfig(cacheNames = UserValidator.ENTITY_NAME)
 public interface UserMapper {
 
     @Select("SELECT * FROM user WHERE id = #{id}")

@@ -5,7 +5,7 @@ import com.bamboo.core.base.constant.GlobalConstants;
 import com.bamboo.core.util.VerifyCodeUtil;
 import com.bamboo.entity.system.Org;
 import com.bamboo.entity.system.User;
-import com.bamboo.entity.validata.UserValidata;
+import com.bamboo.entity.validator.UserValidator;
 import com.bamboo.system.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -86,13 +86,13 @@ public class UserApi extends BaseApi {
         Org org = new Org();
         org.setId("1");
         user.setOrg(org);
-        if (!UserValidata.validata(user)) {
+        if (!UserValidator.validata(user)) {
             result.put(GlobalConstants.RESULT_STATE, GlobalConstants.FAILURE);
             result.put(GlobalConstants.RESULT_MSG, GlobalConstants.MSG_ERR);
             return result;
         }
         HttpSession httpSession = request.getSession();
-        String sessionCode = (String) httpSession.getAttribute(UserValidata.REG_CODE);
+        String sessionCode = (String) httpSession.getAttribute(UserValidator.REG_CODE);
         if (StringUtils.isEmpty(sessionCode) || !validataCode.equals(sessionCode)) {
             result.put(GlobalConstants.RESULT_STATE, GlobalConstants.FAILURE);
             result.put(GlobalConstants.RESULT_MSG, "验证码错误");
@@ -114,7 +114,7 @@ public class UserApi extends BaseApi {
     public String validataCode(HttpServletRequest request) {
         HttpSession session = request.getSession();
         String vCode = VerifyCodeUtil.getSimpleCode();
-        session.setAttribute(UserValidata.REG_CODE, vCode);
+        session.setAttribute(UserValidator.REG_CODE, vCode);
         return vCode;
     }
 }

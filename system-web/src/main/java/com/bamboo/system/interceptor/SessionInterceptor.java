@@ -1,7 +1,7 @@
 package com.bamboo.system.interceptor;
 
 import com.bamboo.entity.system.Session;
-import com.bamboo.entity.validata.SessionValidata;
+import com.bamboo.entity.validator.SessionValidator;
 import com.bamboo.system.util.ThreadVariable;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -39,7 +39,7 @@ public class SessionInterceptor implements HandlerInterceptor {
             return true;
         }
         HttpSession httpSession = httpServletRequest.getSession();
-        Session session = (Session) httpSession.getAttribute(SessionValidata.HTTP_SESSION);
+        Session session = (Session) httpSession.getAttribute(SessionValidator.HTTP_SESSION);
         if (null == session) {
             System.out.println("未登录...");
             System.out.println("跳转登录界面");

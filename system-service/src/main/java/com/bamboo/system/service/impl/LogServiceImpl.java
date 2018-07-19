@@ -3,7 +3,7 @@ package com.bamboo.system.service.impl;
 import com.bamboo.core.util.UUIDUtil;
 import com.bamboo.entity.system.Log;
 import com.bamboo.entity.system.Session;
-import com.bamboo.entity.validata.LogValidata;
+import com.bamboo.entity.validator.LogValidator;
 import com.bamboo.simulate.UserAdmin;
 import com.bamboo.core.base.exception.ServiceException;
 import com.bamboo.system.mapper.LogMapper;
@@ -61,7 +61,7 @@ public class LogServiceImpl implements LogService {
     }
 
     private void saveLog(Log log) {
-        if (!LogValidata.validata(log)) {
+        if (!LogValidator.validata(log)) {
             throw new ServiceException("参数错误", this.getClass().getName());
         }
         try {

@@ -1,7 +1,7 @@
 package com.bamboo.system.mapper;
 
 import com.bamboo.entity.system.Session;
-import com.bamboo.entity.validata.SessionValidata;
+import com.bamboo.entity.validator.SessionValidator;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -19,7 +19,7 @@ import java.util.List;
  * Created by yklin on 2018/5/21.
  */
 @Mapper
-@CacheConfig(cacheNames = SessionValidata.ENTITY_NAME)
+@CacheConfig(cacheNames = SessionValidator.ENTITY_NAME)
 public interface SessionMapper {
 
     @Select("SELECT * FROM session WHERE id = #{id}")
