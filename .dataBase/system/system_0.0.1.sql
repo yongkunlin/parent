@@ -134,3 +134,33 @@ ALTER TABLE role ADD INDEX level_index (level);
 ALTER TABLE role ADD INDEX status_index (status);
 ALTER TABLE role ADD INDEX update_date_index (update_date);
 ALTER TABLE role ADD INDEX version_index (version);
+
+-- 创建 business_dictionary 表
+CREATE TABLE business_dictionary (
+	id VARCHAR (32) NOT NULL COMMENT '主键',
+	dict_code VARCHAR (20) UNIQUE NOT NULL COMMENT 'code',
+	dict_name VARCHAR (20) NOT NULL COMMENT '名称',
+	dict_value INT NOT NULL COMMENT '值',
+	dict_seq INT NOT NULL COMMENT '排序',
+  dict_level INT NOT NULL COMMENT '层级',
+  dict_remark VARCHAR (100) NOT NULL COMMENT '备注',
+  dict_system VARCHAR (20) NOT NULL COMMENT '所属系统',
+	create_user VARCHAR (20) NOT NULL COMMENT '创建人',
+	create_date datetime NOT NULL COMMENT '创建时间',
+	create_ip VARCHAR (15) NOT NULL COMMENT '创建ip',
+	update_user VARCHAR (20) NOT NULL COMMENT '修改人',
+	update_date datetime NOT NULL COMMENT '修改时间',
+	update_ip VARCHAR (15) NOT NULL COMMENT '修改ip',
+	delete_user VARCHAR (20) COMMENT '删除人',
+	delete_date datetime COMMENT '删除时间',
+	delete_ip VARCHAR (15) COMMENT '删除',
+	iz_delete INT NOT NULL COMMENT '是否删除',
+	version INT NOT NULL COMMENT '版本',
+	PRIMARY KEY (id)
+);
+ALTER TABLE business_dictionary ADD INDEX dict_code_index (dict_code);
+ALTER TABLE business_dictionary ADD INDEX dict_name_index (dict_name);
+ALTER TABLE business_dictionary ADD INDEX dict_level_index (dict_level);
+ALTER TABLE business_dictionary ADD INDEX dict_system_index (dict_system);
+ALTER TABLE business_dictionary ADD INDEX update_date_index (update_date);
+ALTER TABLE business_dictionary ADD INDEX version_index (version);
