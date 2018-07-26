@@ -7,9 +7,9 @@ $(function () {
         $('.sidebar a').removeClass('active');
         $(this).addClass('active');
         var code = $(this).attr('resource-code');
-        var key = $(this).attr('resource-key');
+        var key = $(this).attr('load-key');
         $.ajax({
-            url: url,
+            url: '/index/toResource/' + key,
             cache: false,
             success: function (result) {
                 $(".main-content").html(result);

@@ -18,7 +18,7 @@ public class IndexController {
      * @param page
      * @return
      */
-    @RequestMapping("toPage/{page}")
+    @RequestMapping("{page}")
     public String toPage(@PathVariable String page) {
         return page;
     }
@@ -31,6 +31,7 @@ public class IndexController {
      */
     @RequestMapping("toResource/{key}")
     public String toResource(@PathVariable String key) {
-        return key;
+        //模拟
+        return "page/role/role";
     }
 }
