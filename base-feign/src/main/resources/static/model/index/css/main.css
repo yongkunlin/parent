@@ -1,0 +1,68 @@
+@media (min-width: 768px) {
+    .container {
+        width: 500px;
+    }
+
+    .layout-fullwidth > .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 730px;
+    }
+
+    .layout-fullwidth > .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1050px;
+    }
+
+    .layout-fullwidth > .container {
+        width: 1170px;
+    }
+}
+
+.input-list {
+    width: auto !important;
+}
+
+.slimScroll {
+    height: 550px;
+    overflow: auto;
+}
+
+.head-right {
+    display: inline;
+    float: right
+}
+
+.head-right > input {
+    display: inline
+}
+
+.modal-body .row {
+    display: inline;
+}
+
+.modal-body .row lable {
+    line-height: 37px;
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+}
+
+.modal-body .row input {
+    line-height: 37px;
+    width: auto;
+    display: inline-block;
+}
+
+.modal-title {
+    display: inline;
+}

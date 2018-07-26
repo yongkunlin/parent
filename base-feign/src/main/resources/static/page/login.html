@@ -71,7 +71,7 @@
             var data = dom2Json('form');
             $.post(basePaht + '/login/login', data, function (data) {
                 if (data.loginType === SUCCESS) {
-                    $(location).attr('href', basePaht + '/login/dispatch/index');
+                    $(location).attr('href', basePaht + '/index/toPage/index');
                 } else {
                     console.log('登录失败');
                 }

@@ -1,1 +1,39 @@
-into index
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--共用样式-->
+<div th:include="common/include-css :: baseCss"></div>
+<head>
+    <!--右侧样式-->
+    <link rel="stylesheet" th:href="@{/model/index/css/main.css}"/>
+    <link rel="stylesheet" th:href="@{/model/index/temp/main-temp.css}"/>
+</head>
+<body>
+
+<div id="wrapper">
+    <!--顶部-->
+    <div th:replace="include/index/head :: header">&copy; this is head...</div>
+
+    <!--左侧菜单-->
+    <div th:replace="include/index/left :: lefter">&copy; this is left...</div>
+
+    <!--右侧-->
+    <div class="main">
+        <div class="slimScroll">
+            <div class="main-content">
+
+            </div>
+        </div>
+    </div>
+    <!-- 右侧结束 -->
+
+    <!--底部-->
+    <div th:replace="include/index/foot :: footer">&copy; this is foot...</div>
+</div>
+<!--共用js-->
+<div th:include="common/include-js :: baseJs"></div>
+<!--首页js-->
+<script th:src="@{/model/index/js/index.js}"></script>
+<!--边侧栏-->
+<script th:src="@{/model/index/js/sidebar.js}"></script>
+</body>
+</html>

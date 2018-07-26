@@ -3,7 +3,6 @@ package com.bamboo.feign.system.controller;
 import com.bamboo.feign.system.client.LoginClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,17 +20,6 @@ public class LoginController {
     @Autowired
     @SuppressWarnings("all")
     private LoginClient loginClient;
-
-    /**
-     * 跳转
-     *
-     * @param page
-     * @return
-     */
-    @RequestMapping("dispatch/{page}")
-    public String dispatch(@PathVariable String page) {
-        return "index";
-    }
 
     /**
      * 登录

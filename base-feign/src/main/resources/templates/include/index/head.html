@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/base/bootstrap-3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="/base/css/linearicons/style.css">
-    <link rel="stylesheet" href="temp/main-temp.css">
-    <!--右侧样式-->
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-<div id="wrapper">
-    <!--顶部-->
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand">
             <a href="index.html">
-                <img src="temp/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo">
+                <img th:src="@{/model/index/temp/logo-dark.png}" alt="bamboo" class="img-responsive logo"/>
             </a>
         </div>
         <div class="container-fluid">
@@ -26,9 +13,9 @@
             </div>
             <form class="navbar-form navbar-left">
                 <div class="input-group">
-                    <input type="text" value="" class="form-control" placeholder="Search dashboard...">
+                    <input type="text" value="" class="form-control" placeholder="Search something..."/>
                     <span class="input-group-btn">
-                            <button type="button" class="btn btn-primary">Go</button>
+                            <button type="button" class="btn btn-primary">Search</button>
                         </span>
                 </div>
             </form>
@@ -81,7 +68,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="temp/user.png" class="img-circle" alt="Avatar">
+                            <img th:src="@{/model/index/temp/user.png}" class="img-circle" alt="Avatar"/>
                             <span>Samuel</span>
                             <i class="icon-submenu lnr lnr-chevron-down"></i>
                         </a>
@@ -96,75 +83,4 @@
             </div>
         </div>
     </nav>
-    <!-- 顶部结束 -->
-    <!--左侧菜单-->
-    <div id="sidebar-nav" class="sidebar">
-        <div class="sidebar-scroll">
-            <nav>
-                <ul class="nav" id="sidebar">
-                    <li>
-                        <a href="#main" resource-code="main" resource-url="/page/main/main.html" data-toggle="page" class="active">
-                            <i class="lnr lnr-home"></i> <span>首页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#role" resource-code="role" resource-url="/page/role/role.html" data-toggle="page">
-                            <i class="lnr lnr-code"></i> <span>角色</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#org" resource-code="org" resource-url="/jsp/page/org/org.jsp" data-toggle="page">
-                            <i class="lnr lnr-chart-bars"></i> <span>部门</span>
-                        </a>
-                    </li>
-                    <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
-                    <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
-                    <li>
-                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span>
-                            <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages" class="collapse ">
-                            <ul class="nav">
-                                <li><a href="page-profile.html" class="">Profile</a></li>
-                                <li><a href="page-login.html" class="">Login</a></li>
-                                <li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
-                    <li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
-                    <li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <!-- 左侧结束 -->
-    <!--右侧-->
-    <div class="main">
-        <div class="slimScroll">
-            <!-- MAIN CONTENT -->
-            <div class="main-content">
-
-            </div>
-        </div>
-        <!-- END MAIN CONTENT -->
-    </div>
-    <!-- 右侧结束 -->
-    <!--底部-->
-    <div class="index-bottom">
-
-    </div>
 </div>
-
-<script src="/base/js/jquery-3.3.1.js"></script>
-<script src="/base/js/vue.min.js"></script>
-<script src="/base/bootstrap-3.3.7/js/bootstrap.js"></script>
-<script src="/base/js/jquery.slimscroll.min.js"></script>
-<script src="js/index.js"></script>
-
-<script src="/base/js/util/form-util.js"></script>
-<script src="/base/js/util/url-util.js"></script>
-<script src="/base/js/util/global-constants.js"></script>
-<!--边侧栏-->
-<script src="js/sidebar.js"></script>
-</body>
-</html>
