@@ -19,4 +19,9 @@ public class LoginFallBack implements LoginClient {
         map.put("state", "服务器崩溃了");
         return map;
     }
+
+    @Override
+    public String validataCode(HttpServletRequest request) {
+        return null;
+    }
 }

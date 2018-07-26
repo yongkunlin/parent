@@ -9,8 +9,8 @@
     <meta http-equiv="expires" content="0">
     <title>登录界面</title>
     <!--样式-->
-    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-    <link href="css/demo.css" rel="stylesheet" type="text/css"/>
+    <link href="/page/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="/page/css/demo.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class='login' style="padding: 40px 40px 40px 40px;">
@@ -21,25 +21,25 @@
         <form>
             <div class='login_fields__user'>
                 <div class='icon'>
-                    <img alt="" src='img/user_icon_copy.png'>
+                    <img alt="" src='/page/img/user_icon_copy.png'>
                 </div>
                 <input name="userCode" placeholder='用户名' maxlength="20" type='text' autocomplete="off" value="admin"/>
                 <div class='validation'>
-                    <img alt="" src='img/tick.png'>
+                    <img alt="" src='/page/img/tick.png'>
                 </div>
             </div>
             <div class='login_fields__password'>
                 <div class='icon'>
-                    <img alt="" src='img/lock_icon_copy.png'>
+                    <img alt="" src='/page/img/lock_icon_copy.png'>
                 </div>
                 <input name="password" placeholder='密码' maxlength="20" type='text' autocomplete="off" value="admin">
                 <div class='validation'>
-                    <img alt="" src='img/tick.png'>
+                    <img alt="" src='/page/img/tick.png'>
                 </div>
             </div>
             <div class='login_fields__password'>
                 <div class='icon'>
-                    <img alt="" src='img/key.png'>
+                    <img alt="" src='/page/img/key.png'>
                 </div>
                 <input name="validataCode" placeholder='验证码' maxlength="4" type='text' autocomplete="off">
                 <div class='validation' style="opacity: 1; right: -5px;top: -3px;">
@@ -61,7 +61,7 @@
 <script src="/base/js/util/global-constants.js"></script>
 
 <!--粒子化背景-->
-<script src="js/Particleground.js"></script>
+<script src="/page/js/Particleground.js"></script>
 <script>
     $(function () {
         /**
@@ -71,7 +71,7 @@
             var data = dom2Json('form');
             $.post(basePaht + '/login/login', data, function (data) {
                 if (data.loginType === SUCCESS) {
-                    $(location).attr('href', '../index/index.html');
+                    $(location).attr('href', basePaht + '/login/dispatch/index');
                 } else {
                     console.log('登录失败');
                 }
@@ -106,7 +106,7 @@
      */
     function changeValidataCode() {
         var ctx = document.getElementById("validataCodeImg").getContext("2d");
-        $.post(basePaht + '/api/session/validataCode', {timestamp: new Date().valueOf()}, function (data) {
+        $.post(basePaht + '/login/validataCode', {timestamp: new Date().valueOf()}, function (data) {
             ctx.clearRect(0, 0, 1000, 1000);
             ctx.font = "80px 'Hiragino Sans GB'";
             ctx.fillStyle = "#E8DFE8";

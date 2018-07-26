@@ -17,4 +17,7 @@ public interface LoginClient {
 
     @RequestMapping("api/session/login")
     Map<String, Object> login(@RequestParam("request") HttpServletRequest request, @RequestParam("userCode") String userCode, @RequestParam("password") String password, @RequestParam("validataCode") String validataCode);
+
+    @RequestMapping("api/session/validataCode")
+    String validataCode(@RequestParam("request")HttpServletRequest request);
 }

@@ -9,6 +9,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+  thymeleaf:
+      cache: false
+#      prefix: classpath:/templates
 eureka:
   client:
     serviceUrl:
