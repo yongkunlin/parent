@@ -2,7 +2,6 @@ package com.bamboo.system.filter;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.Filter;
 
@@ -10,7 +9,7 @@ import javax.servlet.Filter;
  * 重写过滤
  * Created by yklin on 2018/5/25.
  */
-@Configuration
+//@Configuration
 public class FilterConfig {
     /**
      * 配置过滤器
