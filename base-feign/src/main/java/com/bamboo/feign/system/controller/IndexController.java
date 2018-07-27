@@ -32,6 +32,6 @@ public class IndexController {
     @RequestMapping("toResource/{key}")
     public String toResource(@PathVariable String key) {
         //模拟
-        return "page/role/role";
+        return "page/businessDictionary/businessDictionary";
     }
 }
